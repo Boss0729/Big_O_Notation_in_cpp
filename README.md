@@ -1,86 +1,122 @@
 # Big_O_Notation_in_cpp
 
-# Overview
-This document provides a comprehensive guide to understanding and analyzing algorithms using Big O notation.  
-Big O notation is a mathematical representation used to describe the limiting behavior of an algorithm as the input size increases.  
-It helps classify algorithms based on how their runtime or space requirements grow as the input grows.
+##  Objective
+The objective of this experiment is to:
 
-# What is Big O Notation?
-Big O notation, written as `O(f(n))`, expresses the upper bound of an algorithm’s time or space complexity in the worst-case scenario.  
-It provides a standardized way to understand how efficiently an algorithm scales with larger input data.
+1. Understand the concept of **Algorithm Analysis**.  
+2. Learn how to analyze **time and space complexity** of algorithms.  
+3. Demonstrate algorithms with different **Big O complexities** (O(1), O(n), O(n²)).  
+4. Compare the efficiency of algorithms and understand their scalability.
 
-# Key Characteristics:
-- **Growth Rate:** How runtime increases as input size increases  
-- **Worst Case:** Focuses on maximum time or space needed  
-- **Asymptotic Behavior:** Describes performance as input approaches infinity  
-- **Scalability:** Indicates how well an algorithm performs on large datasets  
+---
 
-# Common Big O Complexities:
+##  Theory
 
-# 1. O(1) – Constant Time:
-**Performance:** Excellent  
-**Definition:** Execution time remains constant regardless of input size  
-**Examples:** Accessing an array element by index, hash table lookup, stack operations  
-**Graph Behavior:** Flat horizontal line  
+### 1. Algorithm
+An **algorithm** is a finite sequence of well-defined steps to solve a particular problem.
 
+### 2. Algorithm Analysis
+Algorithm analysis evaluates the efficiency of an algorithm in terms of:
 
-# 2. O(log n) – Logarithmic Time:-
-**Performance:** Excellent  
-**Definition:** Runtime increases logarithmically with input size  
-**Examples:** Binary search, balanced tree operations, divide and conquer algorithms  
-**Graph Behavior:** Slowly increasing curve that flattens out  
+- **Time Complexity:** Measures the execution time as a function of input size `n`.  
+- **Space Complexity:** Measures the memory consumed as a function of input size `n`.
 
+### 3. Big O Notation (O)
+Big O notation represents the **upper bound** of an algorithm’s running time.  
+- Expresses the **worst-case performance**.  
+- Ignores constant factors and lower-order terms.  
 
-# 3. O(n) – Linear Time:-
-**Performance:** Good  
-**Definition:** Runtime grows directly proportional to input size  
-**Examples:** Linear search, finding min/max in an array, single loop traversal  
-**Graph Behavior:** Straight diagonal line  
+**Examples:**  
+- O(1) → Constant time, independent of input size  
+- O(n) → Linear time, grows proportionally with input size  
+- O(n²) → Quadratic time, grows with the square of input size  
 
+### 4. Other Notations
+- **Big Omega (Ω):** Best-case performance.  
+- **Big Theta (Θ):** Tight bound; both upper and lower bound.  
 
-# 4. O(n log n) – Linearithmic Time:
-**Performance:** Fair  
-**Definition:** Combination of linear and logarithmic growth  
-**Examples:** Merge Sort, Quick Sort (average case), Heap Sort  
-**Graph Behavior:** Slightly curved upward from linear growth  
+### 5. Why Big O is important
+- Helps predict algorithm performance on large datasets.  
+- Assists in choosing the most efficient algorithm.  
+- Useful for optimization and resource management.  
 
+---
 
-# 5. O(n²) – Quadratic Time:
-**Performance:** Poor  
-**Definition:** Runtime grows quadratically with input size  
-**Examples:** Bubble Sort, Selection Sort, nested loops  
-**Graph Behavior:** Steep upward curve  
+##  Program Explanation
+The program demonstrates three algorithms with different complexities:
 
+1. **O(1) – Constant Time**  
+   - Access the first element of an array.  
+   - Execution time is independent of array size.  
 
-# 6. O(n³) – Cubic Time:
-**Performance:** Very Poor  
-**Definition:** Runtime grows cubically with input size  
-**Examples:** Matrix multiplication, triple nested loops  
-**Graph Behavior:** Very steep upward curve  
+2. **O(n) – Linear Time**  
+   - Traverse and print all elements of an array.  
+   - Execution time grows linearly with input size.  
 
+3. **O(n²) – Quadratic Time**  
+   - Print all possible pairs of elements in an array.  
+   - Execution time grows quadratically with input size due to nested loops.  
 
-# 7. O(2ⁿ) – Exponential Time:
-**Performance:** Terrible  
-**Definition:** Runtime doubles with each additional input element  
-**Examples:** Recursive Fibonacci, subset generation, brute force combinatorics  
-**Graph Behavior:** Exponentially steep curve  
+This program helps visualize how the execution time changes with input size.
 
+---
 
-# 8. O(n!) – Factorial Time:
-**Performance:** Catastrophic  
-**Definition:** Runtime grows factorially with input size  
-**Examples:** Permutation generation, Traveling Salesman brute force  
-**Graph Behavior:** Fastest possible growth  
+##  Algorithm
 
+### O(1) – Constant Time
+1. Take an array `arr` of size `n`.  
+2. Access the first element `arr[0]`.  
+3. Print the first element.  
+4. End.  
 
+### O(n) – Linear Time
+1. Take an array `arr` of size `n`.  
+2. Loop from `i = 0` to `i = n-1`.  
+3. Print each element `arr[i]`.  
+4. End.  
 
-# Visualization Tools:-
-- **Algorithm Visualizer**  
-- **VisuAlgo**  
-- **Big O Calculator**
+### O(n²) – Quadratic Time
+1. Take an array `arr` of size `n`.  
+2. Use two nested loops:  
+   - Outer loop: `i = 0` to `n-1`  
+   - Inner loop: `j = 0` to `n-1`  
+3. Print all pairs `(arr[i], arr[j])`.  
+4. End.  
 
+---
 
+##  Big O Analysis Table
 
-# Conclusion
-Big O notation is a critical tool for understanding algorithm efficiency.  
-It helps developers choose the **most optimal solution** for large-scale problems by comparing growth rates rather than exact runtimes.
+| Algorithm         | Description                     | Input Size n | Time Complexity | Space Complexity |
+|------------------|---------------------------------|--------------|----------------|-----------------|
+| O(1)             | Access first element            | n            | 1              | O(1)            |
+| O(n)             | Print all elements              | n            | n              | O(1)            |
+| O(n²)            | Print all pairs of elements     | n            | n²             | O(1)            |
+
+---
+
+##  Step-by-Step Example
+
+**Input Array:** `[1, 2, 3]`  
+
+### O(1) Example
+- Access first element → `1`  
+- Time = 1 step  
+
+### O(n) Example
+- Print all elements → `1 2 3`  
+- Time = 3 steps (linear)  
+
+### O(n²) Example
+- Print all pairs → `(1,1) (1,2) (1,3) (2,1) ... (3,3)`  
+- Time = 9 steps (quadratic)
+
+---
+
+##  Conclusion
+- Algorithm analysis using Big O notation helps determine **efficiency and scalability**.  
+- Constant time algorithms are fastest, while quadratic or higher-order algorithms grow rapidly with input size.  
+- Understanding time complexity allows developers to **choose the most optimal algorithm** for real-world problems.  
+- This experiment provides a clear visualization of how algorithm performance varies with input size.  
+
+---
